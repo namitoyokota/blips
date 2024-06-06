@@ -1,0 +1,6 @@
+<article class="panel is-primary">
+    <p class="panel-heading">Prototypes</p>
+    <ng-container *ngFor="let route of routes">
+        <a *ngIf="route.title && route.title !== homeRouteTitle" class="panel-block" [href]="route.path">{{ route.title }}</a>
+    </ng-container>
+</article>
