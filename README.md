@@ -1,6 +1,6 @@
-![Website Preview](https://api.namitoyokota.com/assets/og-images/prototypes.png)
+![Website Preview](https://api.namitoyokota.com/assets/og-images/blips.png)
 
-# prototypes.namitoyokota.com
+# blips.namitoyokota.com
 
 -   **Framework**: [Angular](https://angular.io/)
 -   **Deployment**: [Vercel](https://vercel.com)
@@ -13,8 +13,8 @@
 ## Running Locally
 
 ```shell
-$ git clone https://github.com/namitoyokota/prototypes.git
-$ cd prototypes
+$ git clone https://github.com/namitoyokota/blips.git
+$ cd blips
 $ yarn install
 $ yarn start
 ```
