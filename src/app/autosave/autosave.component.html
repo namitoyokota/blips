@@ -1,1 +1,12 @@
-<p>autosave works!</p>
+<p>Changing the input fields will fire an autosave request. You can either save manually or wait for the 5 seconds to pass.</p>
+<p>For this demo, there is a 50% chance that the mock API request will fail.</p>
+
+<p>Status: {{ status | async }}</p>
+
+<form class="editor" (submit)="savePersonNow()">
+    <input class="input" type="text" name="first-name" placeholder="First Name" [(ngModel)]="person.firstName" (keydown)="savePerson()" />
+    <input class="input" type="text" name="last-name" placeholder="Last Name" [(ngModel)]="person.lastName" (keydown)="savePerson()" />
+    <button class="button is-primary" type="submit" [disabled]="error | async">Save Now</button>
+</form>
+
+<p *ngIf="error | async" class="error">Previous save request resulted in an error.</p>

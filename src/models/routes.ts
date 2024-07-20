@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AutosaveComponent } from 'src/app/autosave/autosave.component';
 import { FormTourComponent } from 'src/app/form-tour/form-tour.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { MailboxComponent } from 'src/app/mailbox/mailbox.component';
@@ -12,4 +13,5 @@ export const routes: Routes = [
     { title: 'Mailbox Service', path: 'mailbox', component: MailboxComponent },
     { title: 'Rich Markdown Editor', path: 'rich-markdown', component: RichMarkdownComponent },
     { title: 'Store Service', path: 'store', component: StoreComponent },
+    { title: 'Autosave Service', path: 'autosave', component: AutosaveComponent },
 ];
