@@ -1,0 +1,137 @@
+$N10: #fafbfc;
+$N20: #eff2f7;
+$N30: #ebecf0;
+$N40: #c1c7d0;
+$N50: #a6b0bc;
+
+$navy: #172b41;
+$success-bg: #d4edda;
+
+$space-xxs: 2px;
+$space-xs: 5px;
+$space-small: 8px;
+$space-medium: 10px;
+$space-large: 15px;
+
+:host {
+    height: 100%;
+}
+
+.editor-pane {
+    height: 100%;
+}
+
+::ng-deep {
+
+    // ProseMirror generated element
+    .ProseMirror-menubar-wrapper {
+        height: 100%;
+        display: grid;
+        grid-template-rows: min-content auto;
+        border: solid 1px $N40;
+        border-radius: 5px;
+
+        // Menu Bar
+        .ProseMirror-menubar {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: $space-xs;
+            row-gap: $space-xs;
+            border-radius: 5px 5px 0 0;
+            background-color: $N30;
+            padding: $space-small $space-large;
+
+            // Overrides
+            min-height: 0 !important;
+            border-bottom: solid 1px $N40 !important;
+            z-index: 1 !important;
+
+            // Menu Item: Separator
+            .ProseMirror-menuseparator {
+                border-color: $N50;
+                margin: 0 $space-small 0 $space-small;
+            }
+
+            .ProseMirror-icon,
+            .ProseMirror-menu-dropdown-wrap {
+                height: 30px;
+                color: $navy;
+                background-color: $N10;
+                border: 1px solid $N40;
+                border-radius: 4px;
+            }
+
+            // Menu Item: Icon
+            .ProseMirror-icon {
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            // Menu Item: Dropdown
+            .ProseMirror-menu-dropdown-wrap {
+                width: 80px;
+                padding: $space-xs $space-small;
+
+                .ProseMirror-menu-dropdown {
+                    padding: $space-xxs;
+                }
+            }
+
+            // Menu Item: Dropdown Context Menu
+            .ProseMirror-menu-dropdown-menu {
+                min-width: 150px;
+                border-radius: 5px;
+
+                .ProseMirror-menu-dropdown-item {
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    color: $navy;
+                    padding: 0 $space-medium;
+
+                    .ProseMirror-menu-submenu {
+                        min-width: 120px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            // Menu Item: Active
+            .ProseMirror-menu-active {
+                background-color: $success-bg;
+            }
+        }
+    }
+
+    // Content Editable
+    .ProseMirror {
+        min-height: 100px;
+        padding: $space-large;
+        overflow-x: auto;
+
+        p {
+            margin: $space-medium 0;
+        }
+
+        ul,
+        ol {
+            padding-inline-start: 20px;
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    // Placeholder
+    .ProseMirror[data-placeholder]::before {
+        color: $N50;
+        position: absolute;
+        content: attr(data-placeholder);
+        pointer-events: none;
+        margin: $space-medium 0;
+    }
+}

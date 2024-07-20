@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { ActionPaneComponent } from './mailbox/action-pane/action-pane.component';
 import { MailboxComponent } from './mailbox/mailbox.component';
 import { PersonFormComponent } from './mailbox/person-form/person-form.component';
+import { EditorComponent } from './rich-markdown/editor/editor.component';
+import { RichMarkdownComponent } from './rich-markdown/rich-markdown.component';
 import { StoreComponent } from './store/store.component';
 
 @NgModule({
@@ -25,6 +27,8 @@ import { StoreComponent } from './store/store.component';
         StoreComponent,
         ActionPaneComponent,
         PersonFormComponent,
+        EditorComponent,
+        RichMarkdownComponent,
     ],
     imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, CommonModule, FormsModule],
     providers: [MailboxService, ApiService, AutosavePersonService, StorePersonService],

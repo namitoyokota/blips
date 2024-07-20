@@ -4,4 +4,8 @@ import { Component } from '@angular/core';
     templateUrl: './rich-markdown.component.html',
     styleUrl: './rich-markdown.component.scss',
 })
-export class RichMarkdownComponent {}
+export class RichMarkdownComponent {
+    content = 'Content';
+    placeholder = 'Placeholder';
+    disabled = false;
+}
