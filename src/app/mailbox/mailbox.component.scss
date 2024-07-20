@@ -1,0 +1,11 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 50px;
+}
+
+.description {
+    grid-column: span 2;
+}
