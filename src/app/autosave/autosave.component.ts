@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Person } from 'src/models/person';
 import { AutosavePersonService } from 'src/services/autosave-person.service';
 
@@ -16,7 +17,13 @@ export class AutosaveComponent {
     /** Error on previous API request */
     error = this.autosavePersonService.error$;
 
-    constructor(private autosavePersonService: AutosavePersonService) {}
+    constructor(private autosavePersonService: AutosavePersonService, private metaService: Meta) {
+        this.metaService.updateTag({
+            property: 'og:image',
+            content:
+                'https://dynamic-og-image-generator.vercel.app/api/generate?title=Blips+-+unique+prototypes&author=Namito+Yokota&websiteUrl=https%3A%2F%2Fwww.namitoyokota.com&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F42247132%3Fv%3D4&theme=default',
+        });
+    }
 
     /**
      * Fires save request to autosave service
