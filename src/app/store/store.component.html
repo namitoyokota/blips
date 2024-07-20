@@ -1,1 +1,34 @@
-<p>store works!</p>
+<p>Current store:</p>
+
+<small *ngIf="!(persons$ | async).length">List is currently empty.</small>
+
+<form *ngFor="let p of persons$ | async" class="editor" (submit)="update(p)">
+    <input class="input" type="text" name="first-name" placeholder="First Name" [(ngModel)]="p.firstName" (keydown)="p.isDirty = true" />
+    <input class="input" type="text" name="last-name" placeholder="Last Name" [(ngModel)]="p.lastName" (keydown)="p.isDirty = true" />
+    <button class="button is-primary" type="submit" [disabled]="!p.isDirty">Update</button>
+    <button class="button is-danger" (click)="remove(p.id)">Remove</button>
+</form>
+
+<button class="button" [disabled]="!(persons$ | async).length" (click)="clear()">Clear list</button>
+
+<p>Create new:</p>
+
+<form class="editor" (submit)="add()">
+    <input
+        class="input"
+        type="text"
+        name="first-name"
+        placeholder="First Name"
+        [(ngModel)]="person.firstName"
+        (keydown)="person.isDirty = true"
+    />
+    <input
+        class="input"
+        type="text"
+        name="last-name"
+        placeholder="Last Name"
+        [(ngModel)]="person.lastName"
+        (keydown)="person.isDirty = true"
+    />
+    <button class="button is-primary" type="submit" [disabled]="!person.isDirty">Add</button>
+</form>
