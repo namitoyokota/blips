@@ -2,4 +2,4 @@
 <label *ngIf="isDirty">Change detected.</label>
 <label *ngIf="!isDirty">No changes detected.</label>
 
-<button class="button" type="submit" [disabled]="!isDirty" (click)="saveChanges()">Save Now</button>
+<button class="button is-primary" type="submit" [disabled]="!isDirty" (click)="saveChanges()">Save Now</button>
