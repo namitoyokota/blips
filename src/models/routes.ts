@@ -13,5 +13,13 @@ export const routes: Routes = [
     { title: 'Mailbox Service', path: 'mailbox', component: MailboxComponent },
     { title: 'Rich Markdown Editor', path: 'rich-markdown', component: RichMarkdownComponent },
     { title: 'Store Service', path: 'store', component: StoreComponent },
-    { title: 'Autosave Service', path: 'autosave', component: AutosaveComponent },
+    {
+        title: 'Autosave Service',
+        path: 'autosave',
+        component: AutosaveComponent,
+        data: {
+            ogImageUrl:
+                'https://dynamic-og-image-generator.vercel.app/api/generate?title=Autosave+Service&author=Namito+Yokota&websiteUrl=https%3A%2F%2Fblips.namitoyokota.com%2Fautosave&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F42247132%3Fv%3D4&theme=default',
+        },
+    },
 ];
