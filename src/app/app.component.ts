@@ -28,7 +28,9 @@ export class AppComponent implements OnInit {
                 mergeMap((route) => route.data),
             )
             .subscribe((event) => {
-                this.meta.updateTag({ name: 'og:image', content: event['ogImageUrl'] });
+                if (event['ogImageUrl']) {
+                    this.meta.updateTag({ name: 'og:image', content: event['ogImageUrl'] });
+                }
             });
     }
 }
