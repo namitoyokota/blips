@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
             )
             .subscribe((event) => {
                 if (event['ogImageUrl']) {
-                    this.meta.addTag({ property: 'og:image', content: event['ogImageUrl'] });
+                    this.meta.updateTag({ property: 'og:image', content: event['ogImageUrl'] });
                 }
             });
     }
