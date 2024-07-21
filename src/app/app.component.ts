@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs';
 
 @Component({
@@ -10,7 +10,7 @@ import { filter, map, mergeMap } from 'rxjs';
     animations: [],
 })
 export class AppComponent implements OnInit {
-    constructor(private router: Router, private meta: Meta) {}
+    constructor(private activatedRoute: ActivatedRoute, private meta: Meta, private router: Router) {}
 
     /**
      * On init lifecycle hook
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         this.router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
-                map(() => this.router.routerState.root),
+                map(() => this.activatedRoute),
                 map((route) => {
                     while (route.firstChild) route = route.firstChild;
                     return route;
@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
                 mergeMap((route) => route.data),
             )
             .subscribe((event) => {
-                console.log(event['ogImageUrl']);
                 this.meta.updateTag({ name: 'og:image', content: event['ogImageUrl'] });
             });
     }
